@@ -22,7 +22,7 @@ const telegramOrderUrl = computed(() => {
 </script>
 
 <template>
-  <div class="product-card">
+  <div class="product-card" data-scroll-reveal>
     <div class="product-image-box">
       <img :src="cake.image" :alt="cake.name" style="width: 100%; height: 100%; object-fit: cover;" />
       
@@ -86,7 +86,7 @@ const telegramOrderUrl = computed(() => {
           </div>
 
           <p class="order-modal-note">
-            Continue to Telegram with the order details and a link to this cake's photo.
+           បន្តទៅកាន់ Telegram ដោយភ្ជាប់ជាមួយព័ត៌មានលម្អិតនៃការបញ្ជាទិញ
           </p>
 
           <div class="order-modal-actions">

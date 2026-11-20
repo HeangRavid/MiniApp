@@ -6,7 +6,7 @@ const telegramUrl = 'https://t.me/YourTelegramBot'
 <template>
   <section class="hero-section">
     <div class="full-width-container hero-container">
-      <div class="hero-content">
+      <div class="hero-content" data-scroll-reveal>
         <div class="hero-badge">
           <i class="bi bi-star-fill"></i> Freshly Baked With Love <i class="bi bi-heart-fill text-pink"></i>
         </div>
@@ -40,7 +40,7 @@ const telegramUrl = 'https://t.me/YourTelegramBot'
         </div>
       </div>
 
-      <div class="hero-image-wrapper">
+      <div class="hero-image-wrapper" data-scroll-reveal>
         <div class="bg-shape shape-1"></div>
         <img 
           src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200&q=80" 

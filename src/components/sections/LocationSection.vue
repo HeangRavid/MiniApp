@@ -7,7 +7,7 @@ const mapEmbedUrl = 'https://maps.google.com/maps?q=CV26%2BRF2,%20105,%20Siem%20
   <section class="location-section">
     <div class="full-width-container">
       
-      <div class="section-header text-center">
+      <div class="section-header text-center" data-scroll-reveal>
         <h2>Visit Our <span class="text-pink">Store</span></h2>
         <p>Come and taste the sweetness in person. We'd love to see you!</p>
       </div>
@@ -15,7 +15,7 @@ const mapEmbedUrl = 'https://maps.google.com/maps?q=CV26%2BRF2,%20105,%20Siem%20
       <div class="location-grid">
         
         <!-- ប្រអប់ព័ត៌មានទំនាក់ទំនង -->
-        <div class="contact-info">
+        <div class="contact-info" data-scroll-reveal>
           
           <div class="info-list">
             <!-- អាសយដ្ឋាន -->
@@ -53,7 +53,7 @@ const mapEmbedUrl = 'https://maps.google.com/maps?q=CV26%2BRF2,%20105,%20Siem%20
         </div>
 
         <!-- ផែនទី -->
-        <div class="map-container">
+        <div class="map-container" data-scroll-reveal>
           <iframe 
             :src="mapEmbedUrl" 
             width="100%" 

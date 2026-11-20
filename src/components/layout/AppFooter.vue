@@ -6,7 +6,7 @@ const googleMapsLink = 'https://maps.app.goo.gl/5WXXAH2Zkn2WdtUu9'
 <template>
   <footer class="custom-footer">
     <!-- ផ្នែកខាងលើ (Newsletter) -->
-    <div class="footer-newsletter">
+    <div class="footer-newsletter" data-scroll-reveal>
       <div class="full-width-container newsletter-container">
         <div class="newsletter-text">
           <h3>Subscribe for Sweet Updates</h3>
@@ -20,7 +20,7 @@ const googleMapsLink = 'https://maps.app.goo.gl/5WXXAH2Zkn2WdtUu9'
     </div>
 
     <!-- ផ្នែកកណ្តាល (ព័ត៌មានលម្អិត) -->
-    <div class="footer-main">
+    <div class="footer-main" data-scroll-reveal>
       <div class="full-width-container">
         <div class="footer-grid">
           

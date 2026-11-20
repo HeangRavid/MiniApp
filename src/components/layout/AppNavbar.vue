@@ -1,7 +1,35 @@
 <script setup>
-import { ref } from 'vue'
+import { nextTick, ref } from 'vue'
+
+defineProps({
+  searchQuery: {
+    type: String,
+    default: ''
+  }
+})
+
+const emit = defineEmits(['update:searchQuery', 'search'])
 const menuOpen = ref(false)
+const searchOpen = ref(false)
+const searchInput = ref(null)
 const telegramUrl = 'https://t.me/YourTelegramBot'
+
+const toggleSearch = async () => {
+  if (searchOpen.value) {
+    searchOpen.value = false
+    emit('update:searchQuery', '')
+    return
+  }
+
+  searchOpen.value = true
+  await nextTick()
+  searchInput.value?.focus()
+}
+
+const submitSearch = () => {
+  searchOpen.value = false
+  emit('search')
+}
 </script>
 
 <template>
@@ -31,7 +59,35 @@ const telegramUrl = 'https://t.me/YourTelegramBot'
       </div>
 
       <div class="nav-actions">
-        <button class="icon-btn"><i class="bi bi-search"></i></button>
+        <button
+          type="button"
+          class="icon-btn"
+          aria-label="Search cakes"
+          :aria-expanded="searchOpen"
+          aria-controls="navbar-search-panel"
+          @click="toggleSearch"
+        >
+          <i class="bi bi-search"></i>
+        </button>
+        <form
+          v-if="searchOpen"
+          id="navbar-search-panel"
+          class="navbar-search-panel"
+          role="search"
+          @submit.prevent="submitSearch"
+        >
+          <input
+            ref="searchInput"
+            :value="searchQuery"
+            type="search"
+            placeholder="Search name or price (e.g. 5$)..."
+            aria-label="Search cake by name or price"
+            @input="emit('update:searchQuery', $event.target.value)"
+          />
+          <button type="submit" aria-label="Submit cake search">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
         <button class="icon-btn cart-btn">
           <i class="bi bi-cart2"></i>
           <span class="badge">0</span>
